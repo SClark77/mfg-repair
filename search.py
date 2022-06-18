@@ -21,7 +21,7 @@ def search():
 	search_box = Entry(search_records, bg="light grey")
 	search_box.grid(row=0, column=2, pady=10, padx=10)
 
-	search_box_label = Label(search_records, value=["SELECT problem FROM repairs WHERE unit = %s"], bg='#66b2ff')
+	search_box_label = Label(search_records, bg='#66b2ff')
 	search_box_label.grid(row=0, column=0, pady=10, padx=10)
 
 	drop = ttk.Combobox(search_records, value=["Search by...", "Unit", "Fault"])
@@ -103,7 +103,7 @@ def search():
 					my_canvas.grid(row=2, rowspan=5, column=2, columnspan=5, sticky="news")
 
 					my_scrollbar = ttk.Scrollbar(main_frame, orient=VERTICAL, command=my_canvas.yview)
-					my_scrollbar.grid(row=0, rowspan=5, column=10,  sticky='we')
+					my_scrollbar.grid(row=0, rowspan=5, column=10,  sticky='ns')
 					
 					my_canvas.configure(yscrollcommand=my_scrollbar.set)
 					my_canvas.bind('<Configure>', lambda e:my_canvas.configure(scrollregion = my_canvas.bbox("all")))
